@@ -1,0 +1,89 @@
+.storySection {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.story-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 16px;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.story-container::-webkit-scrollbar {
+  display: none;
+}
+
+.story-card {
+  flex: 0 0 auto;
+  aspect-ratio: 5 / 4;
+  width: 20%;
+  min-width: 150px;
+  max-width: 250px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-btn.left {
+  left: 8px;
+}
+
+.scroll-btn.right {
+  right: 8px;
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .story-card {
+    width: 40%;
+    min-width: 120px;
+  }
+
+  .scroll-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-card {
+    width: 60%;
+    min-width: 100px;
+  }
+
+  .scroll-btn {
+    width: 30px;
+    height: 30px;
+  }
+}

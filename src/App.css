@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 200ms;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.appBody {
+  display: flex;
+  flex-direction: column;
+}
+
+nav.navbarBody {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  background: #242424;
+  z-index: 99;
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navSection {
+  display: flex;
+  gap: 16px;
+}
+
+.navSection > button {
+  all: unset;
+  cursor: pointer;
+}
+
+.logo {
+  padding: 0.5em;
+  color: #fff;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  cursor: pointer;
+  /* filter: drop-shadow(0 0 2em #646cffaa); */
+  color: #2933f1;
+}
+
+.sidebarContentWrapper {
+  left: 0;
+  height: calc(100vh - 64px);
+  position: fixed;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  color: #646cff;
+  background-color: #242424;
+}
+
+.sidebarContentWrapper > *:hover {
+  color: #535bf2;
+}
+
+.iconWrapper {
+  z-index: 99;
+  padding: 1em;
+}
+
+.iconWithLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  cursor: pointer;
+}
+
+.iconWithLabel .label {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transform: translateY(-50%);
+  background-color: #2933f1;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease-in-out;
+  margin-left: 8px;
+}
+
+.iconWithLabel:hover .label {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navWrapper {
+  position: fixed;
+  left: -84px;
+  transition: left 300ms;
+  z-index: 8;
+  padding: 1em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navWrapper#show {
+  left: 32px;
+}
+
+.anchorWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5em 1em;
+  width: 100%;
+  height: 44px;
+}
+
+.anchorWrapper:hover {
+  .iconWithLabel .label{
+  visibility: visible;
+  opacity: 1;
+}
+}
+
+main {
+  width: 100%;
+  padding-top: 76px;
+  padding-left: 76px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
